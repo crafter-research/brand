@@ -1,0 +1,259 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { CRAFTER_MARK_PATH, CRAFTER_MARK_VIEWBOX, colors } from "../lib/brand";
+
+const nav = [
+  ["01", "Mark", "#mark"],
+  ["02", "Color", "#color"],
+  ["03", "Type", "#type"],
+  ["04", "Applications", "#applications"],
+  ["05", "Imagery", "#imagery"],
+  ["06", "Voice", "#voice"],
+  ["07", "Social", "#social"],
+];
+
+const variants = [
+  { name: "Primary", className: "mark-primary", note: "Default mark for dark surfaces." },
+  { name: "Signal", className: "mark-signal", note: "Thin-line interface state." },
+  { name: "Evidence", className: "mark-evidence", note: "Muted imprint for documents." },
+  { name: "Specimen", className: "mark-specimen", note: "Glass plate and lab material use." },
+];
+
+const applicationRules = [
+  ["Legal corpora", "Use the mark as a quiet provenance stamp near source material."],
+  ["Agent interfaces", "Pair the mark with small mono labels, never with mascot language."],
+  ["Public datasets", "Lead with method, dates, and source traceability."],
+  ["Research notes", "Use muted paper and graphite before bright accents."],
+];
+
+const voices = [
+  ["We say", "Here is the source, here is the method, here is the limit."],
+  ["We say", "Open corpus, reproducible pipeline, inspectable answer."],
+  ["We avoid", "Magic AI, disruption, thought leadership, vague intelligence."],
+  ["We avoid", "Claims without source links or operational evidence."],
+];
+
+const socialFrames = [
+  ["OG hero", "1200 x 630", "/gen/lab-hero.png"],
+  ["Lab applications", "1 x 1", "/gen/lab-applications.png"],
+];
+---
+<Layout>
+  <div class="site-shell">
+    <header class="topbar" aria-label="Brand guide header">
+      <a class="brand-lockup" href="#top" aria-label="Crafter Research brand">
+        <svg viewBox={CRAFTER_MARK_VIEWBOX} aria-hidden="true">
+          <path d={CRAFTER_MARK_PATH}></path>
+        </svg>
+        <span>Crafter Research</span>
+      </a>
+      <nav aria-label="Brand sections">
+        {nav.map(([num, label, href]) => (
+          <a href={href}><span>{num}</span>{label}</a>
+        ))}
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="cover section-frame" aria-labelledby="cover-title">
+        <div class="cover-copy">
+          <p class="mono-label">Brand system v1</p>
+          <h1 id="cover-title">Crafter Research</h1>
+          <p class="cover-intro">
+            A lab for public-interest research systems: corpora, agents,
+            evidence trails, and tools that make sources inspectable.
+          </p>
+          <div class="cover-actions" aria-label="Primary brand references">
+            <a href="#mark">Use the mark</a>
+            <a href="#applications">See applications</a>
+          </div>
+        </div>
+        <div class="cover-art" aria-label="Generated laboratory brand visual">
+          <img src="/gen/lab-hero.png" alt="Obsidian green research lab table with corpus documents and glass data panels" />
+        </div>
+        <dl class="cover-meta">
+          <div><dt>Domain</dt><dd>brand.crafter.ing</dd></div>
+          <div><dt>Accent</dt><dd>Corpus mint</dd></div>
+          <div><dt>Mode</dt><dd>Lab guide</dd></div>
+        </dl>
+      </section>
+
+      <section id="mark" class="section-frame section-grid">
+        <div class="section-kicker"><span>01</span><p>Main mark</p></div>
+        <div class="section-copy">
+          <h2>Same glyph. Different discipline.</h2>
+          <p>
+            Crafter Research uses the shared Crafter mark, but strips it out of
+            forged gold and places it in a quieter system: green signal, paper
+            evidence, glass layers, and source-first interfaces.
+          </p>
+        </div>
+        <div class="mark-stage">
+          <svg viewBox={CRAFTER_MARK_VIEWBOX} aria-label="Crafter Research primary mark">
+            <path d={CRAFTER_MARK_PATH}></path>
+          </svg>
+        </div>
+        <aside class="spec-panel">
+          <dl>
+            <div><dt>Type</dt><dd>Shared Crafter glyph</dd></div>
+            <div><dt>Primary color</dt><dd>#EEF4EC on #07100D</dd></div>
+            <div><dt>Behavior</dt><dd>Source stamp, app icon, lab signal</dd></div>
+            <div><dt>Do not</dt><dd>Use gold, stretch, rotate, or redraw</dd></div>
+          </dl>
+        </aside>
+        <div class="variant-grid">
+          {variants.map((variant) => (
+            <article class="variant-card">
+              <div class={`variant-mark ${variant.className}`}>
+                <svg viewBox={CRAFTER_MARK_VIEWBOX} aria-hidden="true">
+                  <path d={CRAFTER_MARK_PATH}></path>
+                </svg>
+              </div>
+              <h3>{variant.name}</h3>
+              <p>{variant.note}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="color" class="section-frame section-grid">
+        <div class="section-kicker"><span>02</span><p>Color system</p></div>
+        <div class="section-copy">
+          <h2>Research green, not startup blue.</h2>
+          <p>
+            The palette sits between paper archives and machine-readable
+            interfaces. Mint is the signal. Obsidian is the lab bench.
+          </p>
+        </div>
+        <div class="color-grid">
+          {colors.map((color) => (
+            <article class="swatch" style={`--swatch:${color.hex}`}>
+              <div></div>
+              <h3>{color.name}</h3>
+              <p>{color.token}</p>
+              <code>{color.hex}</code>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="type" class="section-frame section-grid">
+        <div class="section-kicker"><span>03</span><p>Typography</p></div>
+        <div class="section-copy">
+          <h2>Geist for clarity. Mono for evidence.</h2>
+          <p>
+            Prose needs to feel calm and exact. Metadata, source IDs, dates,
+            and corpus references move to mono so they scan like lab records.
+          </p>
+        </div>
+        <div class="type-board">
+          <div class="type-sample">
+            <span>Display</span>
+            <strong>Investigación con fuentes al frente.</strong>
+          </div>
+          <div class="type-sample type-sample-mono">
+            <span>Metadata</span>
+            <strong>LAW.CORPUS/PE/2026 - SOURCE VERIFIED</strong>
+          </div>
+          <div class="type-row">
+            <p>Use tight, readable type. Avoid brand theater. If the sentence cannot survive a footnote, rewrite it.</p>
+            <p class="mono-note">12px mono labels - 0.16em tracking - uppercase only for metadata.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="applications" class="section-frame section-grid">
+        <div class="section-kicker"><span>04</span><p>Applications</p></div>
+        <div class="section-copy">
+          <h2>Brand in use.</h2>
+          <p>
+            Crafter Research shows up in corpus tools, agent UIs, legal
+            research products, and public-interest data systems. The mark never
+            competes with the evidence.
+          </p>
+        </div>
+        <figure class="application-image">
+          <img src="/gen/lab-applications.png" alt="Research brand applications on a black lab table" loading="lazy" decoding="async" />
+        </figure>
+        <div class="rules-grid">
+          {applicationRules.map(([title, body]) => (
+            <article>
+              <h3>{title}</h3>
+              <p>{body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="imagery" class="section-frame section-grid">
+        <div class="section-kicker"><span>05</span><p>Imagery</p></div>
+        <div class="section-copy">
+          <h2>Show the research apparatus.</h2>
+          <p>
+            Visuals should reveal the work: source documents, field notes,
+            graph traces, evaluation sheets, and instruments. No stock teams,
+            no random neon, no fake dashboards.
+          </p>
+        </div>
+        <div class="imagery-board">
+          <img src="/gen/lab-hero.png" alt="Generated Crafter Research laboratory hero visual" loading="lazy" decoding="async" />
+          <div class="imagery-caption">
+            <span>Imagegen asset</span>
+            <p>Use as hero or campaign background when the page needs atmosphere without inventing product UI.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="voice" class="section-frame section-grid">
+        <div class="section-kicker"><span>06</span><p>Voice</p></div>
+        <div class="section-copy">
+          <h2>Evidence first. Claims second.</h2>
+          <p>
+            The voice is direct, bilingual when useful, and method-led. We are
+            a lab, so confidence comes from what can be inspected.
+          </p>
+        </div>
+        <div class="voice-grid">
+          {voices.map(([label, text]) => (
+            <article class={label === "We avoid" ? "avoid" : "say"}>
+              <span>{label}</span>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="social" class="section-frame section-grid">
+        <div class="section-kicker"><span>07</span><p>Social assets</p></div>
+        <div class="section-copy">
+          <h2>Export frames.</h2>
+          <p>
+            Keep share images spare. Mark, domain, method line, and one quiet
+            visual field. If the asset needs copy, make it short enough to cite.
+          </p>
+        </div>
+        <div class="social-grid">
+          {socialFrames.map(([title, size, src]) => (
+            <article>
+              <img src={src} alt={`${title} generated asset`} loading="lazy" decoding="async" />
+              <div>
+                <h3>{title}</h3>
+                <p>{size}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    </main>
+
+    <footer class="wordmark">
+      <div>
+        <strong>Crafter<span>Research</span></strong>
+        <p>Research. Build. Advance.</p>
+      </div>
+      <svg viewBox={CRAFTER_MARK_VIEWBOX} aria-hidden="true">
+        <path d={CRAFTER_MARK_PATH}></path>
+      </svg>
+    </footer>
+  </div>
+</Layout>
