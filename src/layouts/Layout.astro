@@ -23,9 +23,37 @@ const {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="/og.png" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script is:inline>
+      const theme = localStorage.getItem("cr-theme") || "system";
+      if (theme !== "system") {
+        document.documentElement.dataset.theme = theme;
+      }
+    </script>
     <title>{title}</title>
   </head>
   <body>
     <slot />
+    <script is:inline>
+      const modes = ["system", "light", "dark"];
+      const buttons = document.querySelectorAll("[data-theme-toggle]");
+      const applyTheme = (mode) => {
+        if (mode === "system") {
+          document.documentElement.removeAttribute("data-theme");
+        } else {
+          document.documentElement.dataset.theme = mode;
+        }
+        localStorage.setItem("cr-theme", mode);
+        for (const button of buttons) {
+          button.textContent = mode[0].toUpperCase() + mode.slice(1);
+        }
+      };
+      applyTheme(localStorage.getItem("cr-theme") || "system");
+      for (const button of buttons) {
+        button.addEventListener("click", () => {
+          const current = localStorage.getItem("cr-theme") || "system";
+          applyTheme(modes[(modes.indexOf(current) + 1) % modes.length]);
+        });
+      }
+    </script>
   </body>
 </html>
