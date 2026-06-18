@@ -23,6 +23,14 @@ const {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="/og.png" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script is:inline>
+      (() => {
+        const mode = localStorage.getItem("cr-brand-theme") || "system";
+        if (mode === "light" || mode === "dark") {
+          document.documentElement.dataset.theme = mode;
+        }
+      })();
+    </script>
     <title>{title}</title>
   </head>
   <body>
