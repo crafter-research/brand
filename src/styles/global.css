@@ -201,19 +201,21 @@ p {
 }
 
 h1 {
-  max-width: 780px;
-  font-size: clamp(64px, 11vw, 168px);
-  line-height: 0.82;
-  letter-spacing: -0.075em;
+  max-width: 768px;
+  font-size: clamp(2.5rem, 6.2vw, 4.75rem);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
 }
 
 .cover-intro {
-  max-width: 660px;
-  margin-top: 32px;
+  max-width: 576px;
+  margin-top: 28px;
   color: var(--paper-muted);
-  font-size: clamp(20px, 2.1vw, 32px);
-  line-height: 1.22;
-  text-wrap: balance;
+  font-size: clamp(16px, 1.25vw, 18px);
+  line-height: 1.56;
+  text-wrap: pretty;
 }
 
 .cover-actions {
@@ -331,10 +333,12 @@ h1 {
 }
 
 .section-copy h2 {
+  max-width: 768px;
   color: var(--paper-white);
-  font-size: clamp(36px, 5vw, 84px);
-  line-height: 0.95;
-  letter-spacing: -0.055em;
+  font-size: clamp(2.5rem, 6.2vw, 4.75rem);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
   text-wrap: balance;
 }
 
@@ -551,10 +555,12 @@ h1 {
 
 .type-sample strong {
   display: block;
-  max-width: 1050px;
-  font-size: clamp(40px, 7vw, 116px);
-  line-height: 0.94;
-  letter-spacing: -0.06em;
+  max-width: 768px;
+  font-size: clamp(2.5rem, 6.2vw, 4.75rem);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
 }
 
 .type-sample-mono strong,
@@ -641,8 +647,10 @@ h1 {
   margin-top: 18px;
   color: var(--paper-white);
   font-size: clamp(24px, 3vw, 50px);
-  line-height: 1.02;
-  letter-spacing: -0.045em;
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
 }
 
 .voice-grid {
@@ -711,9 +719,11 @@ h1 {
 
 .wordmark strong {
   display: block;
-  font-size: clamp(52px, 10vw, 160px);
-  line-height: 0.82;
-  letter-spacing: -0.078em;
+  font-size: clamp(2.75rem, 8vw, 7.5rem);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
 }
 
 .wordmark strong span {
@@ -752,10 +762,7 @@ h1 {
 }
 
 .asset-hero-copy h1 {
-  max-width: 920px;
-  font-size: clamp(54px, 8.6vw, 132px);
-  line-height: 0.88;
-  letter-spacing: -0.07em;
+  max-width: 768px;
 }
 
 .asset-hero-copy p:not(.mono-label) {
@@ -821,9 +828,11 @@ h1 {
 .asset-section-heading h2 {
   flex: 1;
   color: var(--paper-white);
-  font-size: clamp(36px, 5.4vw, 88px);
-  line-height: 0.9;
-  letter-spacing: -0.06em;
+  font-size: clamp(2.5rem, 6.2vw, 4.75rem);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
   text-align: right;
 }
 
@@ -864,8 +873,9 @@ h1 {
 .prompt-card h3 {
   color: var(--paper-white);
   font-size: 24px;
-  line-height: 1;
-  letter-spacing: -0.04em;
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
   text-align: right;
 }
 
@@ -973,8 +983,9 @@ h1 {
   display: block;
   color: var(--paper-white);
   font-size: 26px;
-  line-height: 0.98;
-  letter-spacing: -0.045em;
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
 }
 
 .export-grid small {
@@ -1076,10 +1087,6 @@ h1 {
     top: auto;
   }
 
-  h1 {
-    font-size: clamp(54px, 17vw, 86px);
-  }
-
   .cover {
     min-height: auto;
   }
@@ -1137,10 +1144,6 @@ h1 {
   .asset-hero-copy,
   .asset-section {
     padding: 28px;
-  }
-
-  .asset-hero-copy h1 {
-    font-size: clamp(48px, 15vw, 76px);
   }
 
   .asset-section-heading {
